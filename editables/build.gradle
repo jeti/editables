@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    // implementation 'io.jeti.ui:layoutparams:1.+'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+}
+
+ext {
+
+    bintrayRepo = 'android'
+    bintrayName = 'editables'
+
+    publishedGroupId = 'io.jeti.ui'
+    libraryName = 'editables'
+    artifact = 'editables'
+
+    libraryDescription = 'Some UI elements for editable fields.'
+
+    siteUrl = 'https://github.com/jeti/editables'
+    gitUrl = 'https://github.com/jeti/editables.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'mholzel'
+    developerName = 'Matthew Holzel'
+    developerEmail = 'matthew.holzel@gmail.com'
+
+    organization = 'mholzel'
+
+    licenseName = 'The Apache Software License, Version 2.0'  //Example for license
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+}
+
+//These two remote files contain Bintray configuration as described above.
+apply from: 'https://raw.githubusercontent.com/quangctkm9207/template-files/master/android/gradle/install.gradle'
+apply from: 'https://raw.githubusercontent.com/quangctkm9207/template-files/master/android/gradle/bintray.gradle'
