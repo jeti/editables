@@ -25,12 +25,12 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.aar'])
-    // implementation 'io.jeti.ui:layoutparams:1.+'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    // For the time being, this must be "compile". "implementation" seems to break the transitive dependencies.
+    compile('io.jeti.ui:layoutparams:1.0.0')
 }
 
 ext {
@@ -47,7 +47,7 @@ ext {
     siteUrl = 'https://github.com/jeti/editables'
     gitUrl = 'https://github.com/jeti/editables.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'mholzel'
     developerName = 'Matthew Holzel'
@@ -62,5 +62,5 @@ ext {
 }
 
 //These two remote files contain Bintray configuration as described above.
-apply from: 'https://raw.githubusercontent.com/quangctkm9207/template-files/master/android/gradle/install.gradle'
-apply from: 'https://raw.githubusercontent.com/quangctkm9207/template-files/master/android/gradle/bintray.gradle'
+apply from: 'https://raw.githubusercontent.com/jeti/jcenter/master/install.gradle'
+apply from: 'https://raw.githubusercontent.com/jeti/jcenter/master/bintray.gradle'
