@@ -1,1 +1,1 @@
-# Please visit https://jeti.github.io/editables/ for a description of this project and its documentation.
+# Please visit [editables.jeti.io](http://editables.jeti.io/) for a description of this project and its documentation.
