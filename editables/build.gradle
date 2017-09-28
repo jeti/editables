@@ -30,15 +30,15 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     // For the time being, this must be "compile". "implementation" seems to break the transitive dependencies.
-    compile('io.jeti.ui:layoutparams:1.0.0')
+    compile('io.jeti:layoutparams:1.0.0')
 }
 
 ext {
 
-    bintrayRepo = 'android'
+    bintrayRepo = 'io'
     bintrayName = 'editables'
 
-    publishedGroupId = 'io.jeti.ui'
+    publishedGroupId = 'io.jeti'
     libraryName = 'editables'
     artifact = 'editables'
 
@@ -47,13 +47,13 @@ ext {
     siteUrl = 'https://github.com/jeti/editables'
     gitUrl = 'https://github.com/jeti/editables.git'
 
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.0'
 
-    developerId = 'mholzel'
+    developerId = 'jeti'
     developerName = 'Matthew Holzel'
     developerEmail = 'matthew.holzel@gmail.com'
 
-    organization = 'mholzel'
+    organization = 'jeti'
 
     licenseName = 'The Apache Software License, Version 2.0'  //Example for license
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
