@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "26.0.2"
 
 
     defaultConfig {
@@ -30,7 +30,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     // For the time being, this must be "compile". "implementation" seems to break the transitive dependencies.
-    compile('io.jeti:layoutparams:1.0.0')
+    compile('io.jeti:layoutparams:1.0.1')
 }
 
 ext {
@@ -47,7 +47,7 @@ ext {
     siteUrl = 'https://github.com/jeti/editables'
     gitUrl = 'https://github.com/jeti/editables.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'jeti'
     developerName = 'Matthew Holzel'

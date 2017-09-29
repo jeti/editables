@@ -1,4 +1,4 @@
-package io.jeti.ui.editables;
+package io.jeti.editables;
 
 import android.content.Context;
 import android.text.InputType;

@@ -1,4 +1,4 @@
-package io.jeti.ui.editables;
+package io.jeti.editables;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import io.jeti.ui.layoutparams.ZeroMatch;
-import io.jeti.ui.layoutparams.ZeroMatch1;
+import io.jeti.layoutparams.ZeroMatch;
+import io.jeti.layoutparams.ZeroMatch1;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 

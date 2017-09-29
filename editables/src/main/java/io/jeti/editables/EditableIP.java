@@ -1,4 +1,4 @@
-package io.jeti.ui.editables;
+package io.jeti.editables;
 
 import android.content.Context;
 import android.text.InputType;
@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import io.jeti.ui.layoutparams.WrapMatch0;
-import io.jeti.ui.layoutparams.ZeroMatch;
-import io.jeti.ui.layoutparams.ZeroMatch1;
+import io.jeti.layoutparams.WrapMatch0;
+import io.jeti.layoutparams.ZeroMatch;
+import io.jeti.layoutparams.ZeroMatch1;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class EditableIP extends LinearLayout {
 
     private TextView             textView         = null;
     private final static int     fields           = 4;
-    private final List<EditText> editableIntegers = new ArrayList<EditText>();
+    private final List<EditText> editableIntegers = new ArrayList<>();
     private static final int     defaultGravity   = Gravity.CENTER_VERTICAL;
 
     public EditableIP(Context context, String text) {
@@ -39,7 +39,7 @@ public class EditableIP extends LinearLayout {
         addView(textView, new ZeroMatch(2));
 
         /* Split the IP address at the periods */
-        int i = 0;
+        int i;
         for (i = 0; i < fields - 1; i++) {
             EditText editText = new EditText(context);
             editText.setId(editTextIDs.get(i));
@@ -72,12 +72,12 @@ public class EditableIP extends LinearLayout {
     }
 
     public String get() {
-        String ip = "";
+        StringBuilder ip = new StringBuilder();
         for (int i = 0; i < fields - 1; i++) {
-            ip += Integer.parseInt(editableIntegers.get(i).getText().toString()) + ".";
+            ip.append(Integer.parseInt(editableIntegers.get(i).getText().toString())).append(".");
         }
-        ip += Integer.parseInt(editableIntegers.get(fields - 1).getText().toString());
-        return ip;
+        ip.append(Integer.parseInt(editableIntegers.get(fields - 1).getText().toString()));
+        return ip.toString();
     }
 
     public int getInputType() {
@@ -85,7 +85,7 @@ public class EditableIP extends LinearLayout {
     }
 
     private static List<Integer> generateIDs(int n) {
-        List<Integer> ids = new ArrayList<Integer>();
+        List<Integer> ids = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             ids.add(View.generateViewId());
         }
